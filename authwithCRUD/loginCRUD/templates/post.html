@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud3 post</title>
+</head>
+<body>
+    <center><h1>Insert Record Detail postgresql</h1>
+        <h2>Django Web tutorial</h2>
+    <hr>
+    <form method="post" action="/update">
+        {% csrf_token %}
+    <table border="3">
+        
+        <tr>
+            <td>Student First Name</td>
+            <td><input type="text"placeholder="Enter Employee Name" name='fname' required>
+            <td>Student Last Name</td>
+            <td><input type="text"placeholder="Enter Employee Name" name='lname' required> 
+            <td>Email Id</td>
+            <td><input type="text"placeholder="Enter Employee Email" name='email' required>
+            <td>Course</td>
+            <td><select name='course' required>
+                <option select disabled="true">--select occupation--</option>
+                <option>Computer science</option>
+                <option>Electrical & Electronics</option>
+                <option>Mechatronics</option>
+                <option>Mechanical</option>
+                <option>Civil</option>
+                <option>B.com</option>
+                <option>M.com</option>
+            <td>gender</td>
+            <td><input type="radio" value="Male" name='gender'>Male</td>
+            <td><input type="radio" value="Female" name='gender'>Female</td>
+            <td>Address :</td>
+            <td><input type="text"placeholder="Address" name='address' required></td>
+                <td><button type="submit" value="submit">submit</button></td>
+                <td>{% if messages %}
+{% for mess in messages %}
+<b style="color : Green;"> {{mess}} </b>
+{%endfor%}
+{% endif%}
+                </td>
+        </tr>
+    </table>
+    <a href="/">Home</a>
+</form>
+</center>
+</body>
+</html>

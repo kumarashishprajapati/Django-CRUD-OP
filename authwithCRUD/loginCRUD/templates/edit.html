@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD2 update</title>
+</head>
+<body>
+    <center>
+
+    <form method="POST" action="update/{{students.id}}">
+        {% csrf_token %}
+    <table border="3">
+        {% comment %} <tr>
+            <td>Student Id</td>
+            <td><input type="text" name="id" value="{{students.id}}" ></td>
+        </tr> {% endcomment %}
+        <tr>
+            <td>student first Name</td>
+            <td><input type="text" name="fname" value="{{students.fname}}" ></td>
+        </tr>
+        <tr>
+            <td>student last Name</td>
+            <td><input type="text" name="lname" value="{{students.lname}}" ></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="email" value="{{students.email}}" ></td>
+        </tr>
+        <tr>
+            <td>Course</td>
+            <td><input type="text" name="course" value="{{students.course}}" ></td>
+        </tr>
+        <tr>
+            <td> Gender</td>
+            <td><input type="text" name="gender" value="{{students.gender}}" ></td>
+        </tr>
+            <tr>
+            <td>Address</td>
+            <td><input type="text" name="address" value="{{Employee.address}}" ></td>
+        </tr>
+           <td> <input type="submit" value="update record"></td>
+    </table>
+    
+    <a href="/">Go To Home Paage</a>
+    <td>
+
+    {%if messages%}
+    {%for mess in messages%}
+    <b style="color:green;">{{mess}}</b>
+    {%endfor%}
+    {%endif%}
+    </td>
+</form>
+</center>
+</body>
+</html>

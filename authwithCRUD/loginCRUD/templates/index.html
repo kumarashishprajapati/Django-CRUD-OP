@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud3</title>
+</head>
+<body>
+    <center><h1>How Operate CRUD operation with postgresql</h1>
+        <h2>Django Web tutorial</h2>
+    <hr>
+    <a href="update">create new employee</a>
+    <table border="3">
+        <tr>
+            <th>Student Id</th>
+            <th>Student First Name</th>
+            <th>Student Last Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Gender</th>
+            <th>Address</th>
+        </tr>
+        {%for result in data%}
+        <tr>
+            <td>{{result.id}}</td>
+            <td>{{result.fname}}</td>
+            <td>{{result.lname}}</td>
+            <td>{{result.email}}</td>
+            <td>{{result.course }}</td>
+            <td>{{result.gender}}</td>
+            <td>{{result.address}}</td>
+            <td><a href="Edit/{{result.id}}" value="edit">Edit</a></td>
+            <td><a href="delet/{{result.id}}" value="Delet">Delete</a></td>
+        </tr>
+
+        {%endfor%}
+    </table>
+</body>
+</html>
